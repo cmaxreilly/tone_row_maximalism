@@ -1,0 +1,13 @@
+#is any item of a list in another list?
+
+list_1 = [1, 2, 3, 4, 5, 6]
+
+list_2 = [5, 6, 7, 8, 9]
+
+for item in list_1:
+    if item in list_2:
+        pass
+    else:
+        list_2.append(item)
+
+print(list_2)
