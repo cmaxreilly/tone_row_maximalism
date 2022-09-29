@@ -1,61 +1,56 @@
 #Copied from midi_function_writer.py
 
-def midi_file_writer_writer (octave, duration):
-    
-    
-
-    for note in :
-        around_C1.append(int(note) + (12 * octave))
-    
-    degrees  = 
-    track    = 0
-    channel  = 0
-    time     = 0   
-    duration = 1/14
-    tempo    = 200  
-    volume   = 100 
-
-    C7_track = MIDIFile(1)
-
-    C7_track.addTempo(track, time, tempo)
-
-    for pitch in degrees:
-        C7_track.addNote(track, channel, pitch, time, duration, volume)
-        time = time + 1
-
-    with open("C7_track.mid", "wb") as output_file:
-        C7_track.writeFile(output_file)
-
+#def midi_file_writer_writer (octave, duration):
+#    for note in :
+#        around_C1.append(int(note) + (12 * octave))
+#    
+#    degrees  = 
+#    track    = 0
+#    channel  = 0
+#    time     = 0   
+#    duration = 1/14
+#    tempo    = 200  
+#    volume   = 100 
+#
+#    C7_track = MIDIFile(1)
+#
+#    C7_track.addTempo(track, time, tempo)
+#
+#    for pitch in degrees:
+#        C7_track.addNote(track, channel, pitch, time, duration, volume)
+#        time = time + 1
+#
+#    with open("C7_track.mid", "wb") as output_file:
+#        C7_track.writeFile(output_file)
+#
 
 # Copied from midi_writer.py
 
-from midiutil import MIDIFile
 
-import random
 
-with open("tone_row_repository.txt", 'r') as repository:
-    string_of_notes = repository.read()
-
-list_of_notes = list(string_of_notes)
-
-around_C1 = []
-around_C2 =[]
-around_C3 = []
-around_C4 = []
-around_C5 = []
-around_C6 = []
-around_C7 = []
-
-for note in list_of_notes:
-    
-    around_C1.append(int(note) + 12)
-    around_C2.append(int(note) + 24)
-    around_C3.append(int(note) + 36)
-    around_C4.append(int(note) + 48)
-    around_C5.append(int(note) + 60)
-    around_C6.append(int(note) + 72)
-    around_C7.append(int(note) + 84)
-
+#with open("tone_row_repository.txt", 'r') as repository:
+#    string_of_notes = repository.read()
+#
+#list_of_notes = list(string_of_notes)
+#
+#around_C1 = []
+#around_C2 =[]
+#around_C3 = []
+#around_C4 = []
+#around_C5 = []
+#around_C6 = []
+#around_C7 = []
+#
+#for note in list_of_notes:
+#    
+#    around_C1.append(int(note) + 12)
+#    around_C2.append(int(note) + 24)
+#    around_C3.append(int(note) + 36)
+#    around_C4.append(int(note) + 48)
+#    around_C5.append(int(note) + 60)
+#    around_C6.append(int(note) + 72)
+#    around_C7.append(int(note) + 84)
+#
 #hyper_row = []
 #for note in list_of_notes:
 #    index_number = 0
@@ -70,71 +65,68 @@ for note in list_of_notes:
 
 #print(hyper_row)
 
-degrees  = around_C7
-track    = 0
-channel  = 0
-time     = 0   
-duration = 1/14
-tempo    = 200  
-volume   = 100 
-
-C7_track = MIDIFile(1)
-
-C7_track.addTempo(track, time, tempo)
-
-for pitch in degrees:
-    C7_track.addNote(track, channel, pitch, time, duration, volume)
-    time = time + 1
-
-with open("C7_track.mid", "wb") as output_file:
-    C7_track.writeFile(output_file)
-
-
+#degrees  = around_C7
+#track    = 0
+#channel  = 0
+#time     = 0   
+#duration = 1/14
+#tempo    = 200  
+#volume   = 100 
+#
+#C7_track = MIDIFile(1)
+#
+#C7_track.addTempo(track, time, tempo)
+#
+#for pitch in degrees:
+#    C7_track.addNote(track, channel, pitch, time, duration, volume)
+#    time = time + 1
+#
+#with open("C7_track.mid", "wb") as output_file:
+#    C7_track.writeFile(output_file)
+#
+#
 # Copied from midi_writer_1.0.py
 
 
-from midiutil import MIDIFile
-
-
-with open("Documents/the_vault/Code/tone_row_maximalism/tone_row_repository.txt", 'r') as repository:
-    string_of_notes = repository.read()
-
-list_of_notes = list(string_of_notes)
-
-around_C1 = []
-around_C2 =[]
-around_C3 = []
-around_C4 = []
-around_C5 = []
-around_C6 = []
-around_C7 = []
-
-for note in list_of_notes:
-    if note == 'T':
-        around_C1.append(10 + 12)
-        around_C2.append(10 + 24)
-        around_C3.append(10 + 36)
-        around_C4.append(10 + 48)
-        around_C5.append(10 + 60)
-        around_C6.append(10 + 72)
-        around_C7.append(10 + 84)
-    elif note == 'E':
-        around_C1.append(11 + 12)
-        around_C2.append(11 + 24)
-        around_C3.append(11 + 36)
-        around_C4.append(11 + 48)
-        around_C5.append(11 + 60)
-        around_C6.append(11 + 72)
-        around_C7.append(11 + 84)
-    else:
-        around_C1.append(int(note) + 12)
-        around_C2.append(int(note) + 24)
-        around_C3.append(int(note) + 36)
-        around_C4.append(int(note) + 48)
-        around_C5.append(int(note) + 60)
-        around_C6.append(int(note) + 72)
-        around_C7.append(int(note) + 84)
-
+#with open("Documents/the_vault/Code/tone_row_maximalism/tone_row_repository.txt", 'r') as repository:
+#    string_of_notes = repository.read()
+#
+#list_of_notes = list(string_of_notes)
+#
+#around_C1 = []
+#around_C2 =[]
+#around_C3 = []
+#around_C4 = []
+#around_C5 = []
+#around_C6 = []
+#around_C7 = []
+#
+#for note in list_of_notes:
+#    if note == 'T':
+#        around_C1.append(10 + 12)
+#        around_C2.append(10 + 24)
+#        around_C3.append(10 + 36)
+#        around_C4.append(10 + 48)
+#        around_C5.append(10 + 60)
+#        around_C6.append(10 + 72)
+#        around_C7.append(10 + 84)
+#    elif note == 'E':
+#        around_C1.append(11 + 12)
+#        around_C2.append(11 + 24)
+#        around_C3.append(11 + 36)
+#        around_C4.append(11 + 48)
+#        around_C5.append(11 + 60)
+#        around_C6.append(11 + 72)
+#        around_C7.append(11 + 84)
+#    else:
+#        around_C1.append(int(note) + 12)
+#        around_C2.append(int(note) + 24)
+#        around_C3.append(int(note) + 36)
+#        around_C4.append(int(note) + 48)
+#        around_C5.append(int(note) + 60)
+#        around_C6.append(int(note) + 72)
+#        around_C7.append(int(note) + 84)
+#
 
 # Testing of the list of notes appendor thing
 #print(list_of_notes)
@@ -295,10 +287,6 @@ with open("Documents/the_vault/Code/tone_row_maximalism/C7_track.mid", "wb") as 
 # Copied from tone_row_maximalism_1.0.py
 
 #My objective with this program is to create a piece that performs every single tone row possible in a row without repetition.
-
-from os import lseek
-import random
-from midiutil import MIDIFile
 
 
 #Function that generates tone rows

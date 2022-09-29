@@ -36,9 +36,9 @@ tone_row_utility/
 
 ### To Do
  - [x] How tf am i gonna structure this filesystem.
- - [ ] Consolidate scripts into functions
- - [ ] Remove unecessary files
- - [ ] 
+ - [x] Consolidate scripts into functions
+ - [x] Remove unecessary files
+ - [ ] Make helper formulas usable in main executable 
 
 
 ### Files that need to be incorporated
