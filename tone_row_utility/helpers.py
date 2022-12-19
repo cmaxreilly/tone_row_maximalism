@@ -137,6 +137,16 @@
 #print(hyper_row)
 
 # Around C1 midifile creator
+
+around_C1 = []
+around_C2 = []
+around_C3 = []
+around_C4 = [ ]
+around_C5 = []
+around_C6 = []
+around_C7 = []
+MIDIFile = []
+
 degrees  = around_C1
 track    = 0
 channel  = 0
