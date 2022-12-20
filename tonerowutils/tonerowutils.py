@@ -1,5 +1,5 @@
 import random
-
+from midiutil import MIDIFile
 
 # This may be way easier to use if I just make a gui, but still going to 
 # make a command line option with an interactive prompt
@@ -109,7 +109,7 @@ def retrograde_pitch_content(pitches):
     return pitches 
 # A function that generates midi files in the given directory from a given set of pitches
 
-def write_midi_file(pitches, desired_duration, path):
+def write_midi_file(pitches, desired_duration, usrpath):
     degrees  = pitches 
     track    = 0
     channel  = 0
@@ -118,20 +118,20 @@ def write_midi_file(pitches, desired_duration, path):
     tempo    = 200  
     volume   = 100 
 
-    C1_track = MIDIFile(1)
+    midi_track = MIDIFile(1)
 
-    C1_track.addTempo(track, time, tempo)
+    midi_track.addTempo(track, time, tempo)
 
     for pitch in degrees:
-        C1_track.addNote(track, channel, pitch, time, duration, volume)
+        midi_track.addNote(track, channel, pitch, time, duration, volume)
         time = time + 1
 
-    with open("Documents/the_vault/Code/tone_row_maximalism/C1_track.mid", "wb") as output_file:
-        C1_track.writeFile(output_file)
+    with open("{}.mid".format(usrpath), "wb") as output_file:
+        midi_track.writeFile(output_file)
 
  
 
-# A __name__ == "__main__" conditional statement for execution.
+# A __name__ == "__main__" conditional statement for testing function execution.
 
 if __name__ == "__main__":
     print(pitch_integers) 
@@ -142,3 +142,7 @@ if __name__ == "__main__":
     print('transpose to all keys: ' + (str(transpose_to_all_keys(test_row))))
     print('invert: ' + str(invert_pitch_content(test_row)))
     print(pitch_integers)
+    write_midi_file(test_row, 1/16, "../test") 
+
+# Congratulations! Looks like all of the functionality works well. Now I will start work on the driver
+# code in ../__main__.py to make a command line tool that makes use of these functions. 

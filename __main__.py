@@ -1,6 +1,7 @@
-from tonerowutils.tonerowutils import * 
-print(pitch_integers)
-print (tone_row_generator())
-print (pitch_integers)
+from tonerowutils import tonerowutils
+
+print(tonerowutils.pitch_integers)
+print (tonerowutils.tone_row_generator())
+print (tonerowutils.pitch_integers)
 
 # Driver code for the tone row utility
